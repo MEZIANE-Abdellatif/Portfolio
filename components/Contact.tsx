@@ -1,46 +1,37 @@
-import { Github, Linkedin, Mail } from "lucide-react";
-
-const email = "abdellatif.meziane18@gmail.com";
-const linkedinUrl = "https://www.linkedin.com/in/abdellatif-meziane";
-const githubUrl = "https://github.com/abdellatifmeziane";
+import { email } from "@/data/site";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="mx-auto max-w-5xl px-4 py-16 pb-24 text-center sm:px-6 sm:py-20 sm:pb-28"
-    >
-      <h2 className="text-2xl font-semibold text-gold sm:text-3xl">Contact</h2>
-      <p className="mx-auto mt-4 max-w-md text-base text-white/70">
-        Open to backend roles and freelance projects. Reach out anytime.
-      </p>
-      <a
-        href={`mailto:${email}`}
-        className="mt-6 inline-flex min-h-[44px] items-center gap-2 text-gold transition-opacity hover:opacity-80"
-      >
-        <Mail className="h-5 w-5" aria-hidden="true" />
-        {email}
-      </a>
-      <div className="mt-8 flex items-center justify-center gap-6">
-        <a
-          href={linkedinUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex min-h-[44px] min-w-[44px] items-center justify-center text-white/70 transition-colors hover:text-gold"
-          aria-label="LinkedIn profile"
-        >
-          <Linkedin className="h-6 w-6" aria-hidden="true" />
-        </a>
-        <a
-          href={githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex min-h-[44px] min-w-[44px] items-center justify-center text-white/70 transition-colors hover:text-gold"
-          aria-label="GitHub profile"
-        >
-          <Github className="h-6 w-6" aria-hidden="true" />
-        </a>
-      </div>
-    </section>
+    <>
+      <div className="section-divider" aria-hidden="true" />
+      <section id="contact" className="mx-auto max-w-[600px] pb-[100px] text-center">
+        <RevealOnScroll>
+          <p className="mb-5 font-mono text-base text-gold">What&apos;s Next?</p>
+          <h2 className="mb-5 text-[clamp(40px,5vw,60px)] font-semibold leading-[1.1] text-foreground">
+            Get In Touch
+          </h2>
+          <p className="text-muted">
+            I&apos;m currently open to backend roles and freelance projects.
+            Whether you have a question or just want to say hi, my inbox is
+            always open — I&apos;ll do my best to get back to you.
+          </p>
+        </RevealOnScroll>
+
+        <RevealOnScroll delay={150}>
+          <div className="glass mt-12 inline-block rounded-lg p-1">
+            <a
+              href={`mailto:${email}`}
+              className="btn-filled block px-10 py-5"
+            >
+              Say Hello
+            </a>
+          </div>
+          <p className="mt-6 font-mono text-xs text-muted">
+            {email}
+          </p>
+        </RevealOnScroll>
+      </section>
+    </>
   );
 }
