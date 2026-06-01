@@ -10,12 +10,12 @@ export default function SkillBar({ name, level, max = 5 }: SkillBarProps) {
   return (
     <div className="skill-card">
       <div className="mb-3 flex items-center justify-between gap-2">
-        <span className="font-mono text-sm text-foreground">{name}</span>
+        <span className="font-mono text-sm text-white">{name}</span>
         <span className="font-mono text-xs text-gold">{level}/{max}</span>
       </div>
       <div
         className="h-1.5 overflow-hidden rounded-full"
-        style={{ background: "var(--divider)" }}
+        style={{ background: "rgba(201, 168, 76, 0.2)" }}
         role="meter"
         aria-valuenow={level}
         aria-valuemin={0}

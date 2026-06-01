@@ -5,7 +5,6 @@ import Navbar from "@/components/Navbar";
 import SideSocial from "@/components/SideSocial";
 import SideEmail from "@/components/SideEmail";
 import Footer from "@/components/Footer";
-import BackgroundEffects from "@/components/BackgroundEffects";
 import ScrollProgress from "@/components/ScrollProgress";
 
 const inter = Inter({
@@ -68,8 +67,8 @@ const personJsonLd = {
     "REST APIs",
   ],
   sameAs: [
-    "https://www.linkedin.com/in/abdellatif-meziane",
-    "https://github.com/abdellatifmeziane",
+    "https://www.linkedin.com/in/abdellatif-meziane-847916219/",
+    "https://github.com/MEZIANE-Abdellatif",
   ],
 };
 
@@ -85,11 +84,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
-        <BackgroundEffects />
         <ScrollProgress />
         <a
           href="#content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-gold focus:px-4 focus:py-2 focus:text-background"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-gold focus:px-4 focus:py-2 focus:text-navy"
         >
           Skip to content
         </a>

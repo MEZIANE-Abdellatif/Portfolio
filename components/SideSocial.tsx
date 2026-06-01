@@ -21,7 +21,7 @@ export default function SideSocial() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block p-2.5 text-muted transition-transform duration-300 ease-default hover:-translate-y-1 hover:text-gold"
+                className="block p-2.5 text-white/60 transition-transform duration-300 ease-default hover:-translate-y-1 hover:text-gold"
                 aria-label={link.name}
               >
                 <Icon className="h-5 w-5" aria-hidden="true" />

@@ -12,7 +12,7 @@ export default function About() {
         </RevealOnScroll>
         <RevealOnScroll delay={100}>
           <div className="grid gap-12 md:grid-cols-[3fr_2fr] md:gap-[50px]">
-            <div className="text-muted">
+            <div className="text-lg leading-relaxed text-white/80 md:text-xl">
               <p className="mb-4">
                 Backend Developer with full-stack experience building scalable
                 web applications from the ground up.
@@ -24,7 +24,7 @@ export default function About() {
               </p>
               <p className="mb-4">
                 Based in{" "}
-                <span className="inline-link text-foreground">
+                <span className="inline-link">
                   Warsaw, Poland
                 </span>
                 , open to remote opportunities across Europe and beyond.
@@ -50,7 +50,7 @@ export default function About() {
             <div className="relative mx-auto w-full max-w-[300px] md:mx-0 md:justify-self-end">
               <div className="group relative">
                 <div className="relative z-[1] overflow-hidden rounded-lg transition-transform duration-300 ease-default group-hover:-translate-x-1 group-hover:-translate-y-1">
-                  <div className="glass relative aspect-square overflow-hidden">
+                  <div className="surface-card relative aspect-square overflow-hidden rounded-lg">
                     <Image
                       src="/profile.png"
                       alt="Abdellatif Meziane, Backend Developer based in Warsaw"

@@ -6,7 +6,7 @@ export default function SideEmail() {
       <div className="side-line flex flex-col items-center">
         <a
           href={`mailto:${email}`}
-          className="my-5 p-2.5 font-mono text-xs tracking-widest text-muted transition-transform duration-300 ease-default [writing-mode:vertical-rl] hover:-translate-y-1 hover:text-gold"
+          className="my-5 p-2.5 font-mono text-xs tracking-widest text-white/60 transition-transform duration-300 ease-default [writing-mode:vertical-rl] hover:-translate-y-1 hover:text-gold"
         >
           {email}
         </a>

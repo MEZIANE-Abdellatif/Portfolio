@@ -9,13 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0D0D0D",
-        foreground: "#F5F5F5",
-        muted: "#666666",
+        background: "#0A1628",
+        navy: "#0A1628",
+        foreground: "#FFFFFF",
         gold: "#C9A84C",
+        "gold-light": "#E6C56B",
+        "gold-dark": "#9B7F33",
       },
       boxShadow: {
-        glass: "0 8px 32px rgba(0, 0, 0, 0.4)",
+        gold: "0 10px 40px -10px rgba(201, 168, 76, 0.2)",
+        card: "0 8px 32px rgba(0, 0, 0, 0.35)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

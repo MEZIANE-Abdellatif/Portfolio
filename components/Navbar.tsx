@@ -26,57 +26,52 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`glass-nav fixed inset-x-0 top-0 z-50 flex h-[var(--nav-height)] items-center px-6 transition-[height,box-shadow] duration-300 ease-default sm:px-10 lg:px-[50px] ${
-          scrolled ? "h-[var(--nav-scroll-height)] shadow-glass" : ""
+        className={`nav-bar fixed inset-x-0 top-0 z-50 flex h-[var(--nav-height)] items-center px-6 sm:px-10 lg:px-[50px] ${
+          scrolled ? "nav-bar-scrolled h-[var(--nav-scroll-height)]" : "bg-transparent"
         }`}
       >
         <nav
-          className="flex w-full items-center justify-between font-mono text-foreground"
+          className="flex w-full max-w-6xl mx-auto items-center justify-between"
           aria-label="Main navigation"
         >
           <a
             href="#"
-            className="text-2xl font-bold text-gold transition-transform duration-300 ease-default hover:-translate-x-1 hover:-translate-y-1"
+            className="group flex items-center gap-2 font-bold tracking-tight"
             aria-label="Abdellatif Meziane — Home"
           >
-            AM
+            <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-gold/50 text-lg text-gold transition-all duration-300 group-hover:bg-gold group-hover:text-navy">
+              AM
+            </span>
           </a>
 
-          <ol className="hidden list-none items-center p-0 md:flex">
-            {navLinks.map((link, i) => {
+          <ol className="hidden list-none items-center gap-8 p-0 md:flex">
+            {navLinks.map((link) => {
               const isActive = activeSection === link.href;
               return (
-                <li key={link.href} className="mx-1">
+                <li key={link.href}>
                   <a
                     href={link.href}
-                    className={`relative px-2.5 py-2.5 text-xs transition-colors duration-300 ease-default hover:text-gold ${
-                      isActive ? "text-gold" : ""
+                    className={`relative text-sm transition-colors duration-300 after:absolute after:bottom-[-6px] after:left-0 after:h-0.5 after:bg-gold after:transition-all hover:text-gold ${
+                      isActive
+                        ? "text-gold after:w-full"
+                        : "text-white/80 after:w-0 hover:after:w-full"
                     }`}
                   >
-                    <span className="mr-1 text-gold">
-                      {String(i + 1).padStart(2, "0")}.
-                    </span>
                     {link.label}
-                    {isActive && (
-                      <span
-                        className="absolute -bottom-1 left-2.5 right-2.5 h-px bg-gold"
-                        aria-hidden="true"
-                      />
-                    )}
                   </a>
                 </li>
               );
             })}
-            <li className="ml-4">
-              <a href="#contact" className="btn-outline px-4 py-3 text-xs">
-                Contact
+            <li>
+              <a href="#contact" className="btn-primary px-4 py-2 text-xs">
+                Hire me
               </a>
             </li>
           </ol>
 
           <button
             type="button"
-            className="relative z-50 flex h-11 w-11 flex-col items-center justify-center gap-1.5 md:hidden"
+            className="relative z-50 flex h-11 w-11 items-center justify-center text-white md:hidden"
             onClick={() => setIsOpen((prev) => !prev)}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -84,17 +79,17 @@ export default function Navbar() {
           >
             <span
               className={`block h-0.5 w-6 bg-gold transition-transform duration-300 ${
-                isOpen ? "translate-y-2 rotate-45" : ""
+                isOpen ? "absolute translate-y-0 rotate-45" : ""
               }`}
             />
             <span
               className={`block h-0.5 w-6 bg-gold transition-opacity duration-300 ${
-                isOpen ? "opacity-0" : ""
+                isOpen ? "opacity-0" : "my-1.5"
               }`}
             />
             <span
               className={`block h-0.5 w-6 bg-gold transition-transform duration-300 ${
-                isOpen ? "-translate-y-2 -rotate-45" : ""
+                isOpen ? "absolute -translate-y-0 -rotate-45" : ""
               }`}
             />
           </button>
@@ -103,26 +98,21 @@ export default function Navbar() {
 
       <div
         id="mobile-menu"
-        className={`glass fixed inset-0 z-40 flex flex-col items-center justify-center transition-transform duration-300 ease-default md:hidden ${
+        className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-navy/95 backdrop-blur-md transition-transform duration-300 ease-default md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
         aria-hidden={!isOpen}
       >
         <ol className="flex list-none flex-col items-center gap-2 p-0 text-center">
-          {navLinks.map((link, i) => (
+          {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`flex min-h-[44px] items-center px-5 py-3 font-mono text-lg transition-colors hover:text-gold ${
-                  activeSection === link.href
-                    ? "text-gold"
-                    : "text-foreground"
+                className={`flex min-h-[44px] items-center px-5 py-3 text-lg transition-colors hover:text-gold ${
+                  activeSection === link.href ? "text-gold" : "text-white/80"
                 }`}
                 onClick={() => setIsOpen(false)}
               >
-                <span className="mr-2 text-gold">
-                  {String(i + 1).padStart(2, "0")}.
-                </span>
                 {link.label}
               </a>
             </li>
@@ -130,10 +120,10 @@ export default function Navbar() {
           <li className="mt-4">
             <a
               href="#contact"
-              className="btn-outline"
+              className="btn-primary"
               onClick={() => setIsOpen(false)}
             >
-              Contact
+              Hire me
             </a>
           </li>
         </ol>

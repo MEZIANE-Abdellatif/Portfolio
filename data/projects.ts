@@ -1,6 +1,5 @@
 export interface Project {
   name: string;
-  url: string;
   description: string;
   tags: string[];
   github: string;
@@ -10,25 +9,22 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: "Job Tracker",
-    url: "https://apptracker.live",
     description:
       "Full-stack job tracking platform with Docker, CI/CD, and production monitoring",
     tags: ["Node.js", "TypeScript", "Docker", "PostgreSQL"],
     github: "",
-    live: "https://apptracker.live",
+    live: "https://app.apptracker.live/",
   },
   {
     name: "Maison Snow",
-    url: "",
     description:
       "Luxury fashion e-commerce with Stripe, NextAuth, and admin panel",
     tags: ["Next.js", "Prisma", "Stripe", "PostgreSQL"],
     github: "",
-    live: "",
+    live: "https://maison-snow-project.vercel.app/",
   },
   {
     name: "Mazzinka",
-    url: "https://mazzinka.com",
     description:
       "Full-stack e-commerce with Google OAuth and email verification",
     tags: ["React", "Node.js", "Express", "MongoDB"],
@@ -37,7 +33,6 @@ export const projects: Project[] = [
   },
   {
     name: "AtlasUtils",
-    url: "https://atlasutils.com",
     description: "Multi-tool platform with Arabic RTL and full i18n support",
     tags: ["Next.js", "TypeScript", "Tailwind", "Vercel"],
     github: "",

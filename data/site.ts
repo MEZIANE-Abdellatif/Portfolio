@@ -3,11 +3,11 @@ export const email = "abdellatif.meziane18@gmail.com";
 export const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/abdellatifmeziane",
+    url: "https://github.com/MEZIANE-Abdellatif",
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/abdellatif-meziane",
+    url: "https://www.linkedin.com/in/abdellatif-meziane-847916219/",
   },
 ];
 
